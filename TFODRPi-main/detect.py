@@ -30,8 +30,7 @@ def set_input_tensor(interpreter, image):
 def get_output_tensor(interpreter, index):
   """Returns the output tensor at the given index."""
   output_details = interpreter.get_output_details()[index]
-  tensor = np.squeeze(interpreter.get_tensor(output_details['index']))
-  return tensor
+  return np.squeeze(interpreter.get_tensor(output_details['index']))
 
 
 def detect_objects(interpreter, image, threshold):
